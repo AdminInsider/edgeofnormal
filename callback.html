@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Login complete – Shorts Autopilot</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+  <h1>Login complete</h1>
+  <p id="msg">You can close this tab. The Shorts Autopilot script on your computer reads the result from this page's address.</p>
+  <p><a href="index.html">← Edge of Normal</a></p>
+</main>
+<script>
+  // Nothing is sent anywhere: the authorization code stays in this tab's address bar.
+  var p = new URLSearchParams(location.search);
+  if (p.get("error")) document.getElementById("msg").textContent = "Login was cancelled or failed: " + p.get("error");
+</script>
+</body>
+</html>
